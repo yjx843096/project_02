@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1.const let
+    //2.解构赋值
+    // 3.简化对象和函数写法
+    // 4.解构赋值
+    // 5.模板字符串
+    // ES6函数参数的默认值
+    // rest参数
+
+    // ES6允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构赋值
+    //1.数组的解构赋值
+    const f4=['大哥','二哥','三哥','四哥']
+    let [a,b,c,d]=f4
+    //这就相当于我们声明4个变量a,b,c,d，其值分别对应'大哥','二哥','三哥','四哥'
+    console.log(a+b+c+d);
+    
+    //2.对象的解构赋值
+    const f3={
+      name:'大哥',
+      age:22,
+      sex:'男',
+      xiaopin:function(){
+        console.log('我会演小品');
+      }
+    }
+    let {name,age,sex,xiaopin}=f3
+    console.log(name+age+sex);
+    xiaopin()
+  </script>
+</body>
+</html>

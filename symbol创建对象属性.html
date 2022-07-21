@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     let game={
+       name:'俄罗斯方块',
+       up:function(){},
+       down:function(){}
+     }
+     //我们往game对象里面添加方法，但是怕game对象已经存在
+     //同名方法，所以我们这时候用到了Symbol
+     let methods= {
+       up:Symbol(),
+       down:Symbol()
+     }
+     game[methods.up]=function(){
+       console.log('我可以改变形状');
+     }
+     game[methods.down]=function(){
+       console.log('我可以快速下降！');
+     }
+     console.log(game);
+
+     //方式二
+     let youxi={
+       name:'狼人杀',
+       [Symbol('say')]:function(){
+         console.log('我可以发言');
+       },
+       [Symbol('zibao')]:function(){
+         console.log('我可以自爆');
+       }
+     }
+     console.log(youxi);
+
+     let say=Symbol('say');
+     let youxi1={
+      name:'狼人杀',
+      [say]:function(){
+        console.log('我可以发言');
+      },
+      [Symbol('zibao')]:function(){
+         console.log('我可以自爆');
+       }
+     }
+  </script>
+</body>
+</html>
